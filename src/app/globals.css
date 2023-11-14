@@ -1,0 +1,300 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #daf52e;
+  padding: 0;
+  margin: 0;
+  --color1: #148aea;
+  --color2: #f00505;
+  --color3: #ff00a2;
+  --color4: #fff702;
+  --color5: #ffff05;
+  --color6: #ec1bc7;
+  --color7: rgb(4, 4, 231);
+  --color8: #eaff03;
+  --blur: 70px;
+
+  height: 100svh;
+  position: relative;
+}
+
+@keyframes float {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.art-container {
+  filter: blur(var(--blur, 30px));
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.art-container-noise {
+  background-image: url("https://staging.gettaki.com/static/media/noise-pattern-medium.png");
+  background-repeat: repeat;
+  background-size: 250px 250px;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transition: "opacity 4s ease-in-out";
+}
+
+.art {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+}
+
+.art:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  left: 0px;
+  top: 0px;
+  background-repeat: repeat;
+}
+
+.art-1:before {
+  background: var(--color1);
+}
+
+.art-2 {
+  animation: float 10s infinite ease-in-out;
+}
+
+.art-3 {
+  animation: float 35s infinite ease-in-out;
+}
+
+.art-4 {
+  animation: float 20s infinite ease-in-out;
+}
+
+.art-5 {
+  animation: float 13s infinite ease-in-out;
+}
+
+.art-6 {
+  animation: float 21s infinite ease-in-out;
+}
+
+.art-2:before {
+  background: var(--color2, red);
+  clip-path: polygon(86% 59%, 59% 70%, 25% 50%, 0 31%, 0 0, 53% 0);
+}
+
+.art-3:before {
+  background: var(--color3, #113399);
+  clip-path: polygon(100% 0, 100% 29%, 73% 69%, 50% 28%, 28% 50%, 59% 0);
+}
+
+.art-4:before {
+  background: var(--color4, #00bbea);
+  clip-path: polygon(41% 52%, 22% 69%, 11% 82%, 6% 100%, 0 100%, 0 42%);
+}
+
+.art-5:before {
+  clip-path: polygon(86% 15%, 86% 34%, 75% 85%, 70% 30%, 85% 0, 100% 0);
+  background: var(--color5, #00aaea);
+}
+
+.art-6:before {
+  clip-path: polygon(11% 10%, 43% 5%, 51% 19%, 33% 38%, 16% 26%, 10% 65%, 21% 81%);
+  background: var(--color6, #ec1bc7);
+}
+
+.art-7:before {
+  clip-path: polygon(63% 94%,
+      46% 85%,
+      63% 88%,
+      81% 83%,
+      85% 71%,
+      90% 66%,
+      92% 75%,
+      92% 89%,
+      74% 98%,
+      69% 100%,
+      97% 100%);
+  background: var(--color7, rgb(29, 29, 6));
+}
+
+button {
+  color: #222;
+}
+
+img:not([src]) {
+  display: none;
+}
+
+img {
+  margin-top: 20px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-start {
+  cursor: pointer;
+  font-size: 2.5rem;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 10px 10px #000;
+  border: 2px solid #000 !important;
+  transition: all ease-in 0.2s !important;
+  z-index: 100;
+  color: #222;
+}
+
+@media screen and (max-width: 700px) {
+  .btn-start {
+    font-size: 1.5rem;
+  }
+}
+
+.btn-start:hover {
+  box-shadow: none;
+  transform: translate(8px, 8px) !important;
+  transition: all ease-in 0.1s;
+  opacity: 1 !important;
+}
+
+.btn-stop {
+  cursor: pointer;
+  font-size: 2.5rem;
+  padding: 30px;
+  border-radius: 5px;
+  border: 2px solid #000 !important;
+  transition: all ease-in 0.2s !important;
+  z-index: 100;
+  color: #222;
+}
+
+@media screen and (max-width: 700px) {
+  .btn-stop {
+    font-size: 1.5rem;
+  }
+}
+
+.btn-stop:hover {
+  box-shadow: none;
+  background-color: rgb(232, 232, 232);
+  transition: all ease-in 0.1s;
+  opacity: 0.7 !important;
+}
+
+.btn-generating {
+  cursor: default;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0 solid #000 !important;
+  background-color: transparent;
+  color: #060606;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: none;
+  z-index: 100;
+}
+
+@media screen and (max-width: 700px) {
+  .btn-generating {
+    font-size: 1.5rem;
+  }
+}
+
+.sticky-button {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+
+@media screen and (max-width: 700px) {
+  .sticky-button {
+    top: auto;
+    bottom: 15px;
+    left: 5%;
+    width: 90%;
+    padding: 10px 0;
+  }
+}
+
+.generated-img {
+  max-height: min(calc(100vh - 200px), 90vw);
+  max-width: min(calc(100vh - 200px), 90vw);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+}
+
+.area-img {
+  transition: 0.15s opacity ease-in-out;
+  position: absolute;
+  max-height: calc(0.5 * min(calc(100vh - 200px), 90vw));
+  max-width: calc(0.5 * min(calc(100vh - 200px), 90vw));
+  z-index: 100;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: #e613bf;
+}
+
+.area-img:hover {
+  opacity: 0.5;
+}
+
+.text-query {
+  position: absolute;
+  width: 70vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6rem;
+  overflow: hidden;
+  font-weight: 900;
+  z-index: 0;
+  word-break: break-all;
+}
+
+@media screen and (max-width: 1000px) {
+  .text-query {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .text-query {
+    font-size: 2rem;
+    width: 90vw;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
